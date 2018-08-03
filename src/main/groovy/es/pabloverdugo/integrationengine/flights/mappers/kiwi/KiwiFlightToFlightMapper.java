@@ -7,6 +7,8 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 import org.mapstruct.ReportingPolicy;
 
+import java.util.List;
+
 @Mapper(
         componentModel = "spring",
         uses = {KiwiAirlineToAirlineMapper.class},
@@ -23,5 +25,7 @@ public interface KiwiFlightToFlightMapper {
             @Mapping(source = "airline", target = "airline")
     })
     Flight kiwiFlightToFlight(KiwiFlight kiwiFlight);
+
+    List<Flight> kiwiFlightsToFlights(List<KiwiFlight> kiwiFlights);
 
 }

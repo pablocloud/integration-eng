@@ -3,6 +3,7 @@ package es.pabloverdugo.integrationengine.flights.domain
 import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.Id
+import javax.persistence.OneToMany
 
 @Entity
 class Availability implements Serializable {
@@ -14,6 +15,8 @@ class Availability implements Serializable {
     Double price
     Country countryFrom
     Country countryTo
+
+    @OneToMany(targetEntity = Flight)
     List<Flight> route
 
 }
